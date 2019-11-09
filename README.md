@@ -10,7 +10,7 @@ To install the necessary libraries run ```pip install -r requirements.txt``` in 
 
 ## Running the Bot
 
-To run the bot first you need to run the ```main.py``` script. To do that type ```python3 main.py``` in terminal and then enter the hashtag as input.
+To run the bot first you need to run the ```main.py``` script along with the ```hashtag``` passed as argument. To do that type ```python3 main.py {hashtag}``` in terminal and in place of ```{hashtag}``` enter the desired hashtag.
 
 # Usefulness
 
