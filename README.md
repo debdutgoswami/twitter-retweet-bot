@@ -21,4 +21,4 @@ This Bot can be used by influencers to get followers or likes (mainly applicable
 
 1. This same technique can be used in almost any social media sites, like Instagram, Facebook, etc. You just need to be careful with the checks the websites perform to determine wheter a user is a real person or a Bot.
 
-2. You can keep this bot running overnight or create a VM in and Cloud Platform and keep it running always (mind the bill :p).
+2. You can keep this bot running overnight or create a VM in any cloud platform and keep it running always (mind the bill :p).
