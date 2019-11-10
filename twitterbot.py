@@ -40,6 +40,7 @@ class Twitterbot:
             time.sleep(4)
             [links.add(elem.get_attribute('href')) for elem in bot.find_elements_by_xpath("//a[@dir='auto']")]
 
+        #traversing through the generated links
         for link in links:
             bot.get(link)
             time.sleep(4)
