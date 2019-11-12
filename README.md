@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.io/debdutgoswami/twitter-retweet-bot.svg)](http://hits.dwyl.io/debdutgoswami/twitter-retweet-bot)
 
-# Twitter Retweet Bot
+# Twitter Retweet Bot </br>
 
 I made a simple twitter bot which will retweet tweets with the specified hashtag. This was my first attempt of creating a twitter bot. It is obviously not perfect and there is room for lots of imprvements which I will do eventually with time.</br>
 
