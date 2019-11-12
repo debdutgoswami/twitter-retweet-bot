@@ -6,12 +6,25 @@ import time
 class Twitterbot:
 
     def __init__(self, email, password):
+
+        """Constructor
+
+        Arguments:
+            email {string} -- registered twitter email
+            password {string} -- password for the twitter account of the above email
+        """
+
         self.email = email
         self.password = password
 
         self.bot = webdriver.Chrome()
 
     def login(self):
+
+        """
+            This is used to login the user with the provided email and password.
+        """
+
         bot = self.bot
 
         bot.get('https://twitter.com/login')
@@ -26,7 +39,14 @@ class Twitterbot:
         password.send_keys(Keys.RETURN)
         time.sleep(2)
 
-    def retweet(self, hashtag):
+    def like_retweet(self, hashtag):
+
+        """This function automatically retrieves the tweets and then likes and retweets them
+
+        Arguments:
+            hashtag {string} -- twitter hashtag
+        """
+
         bot = self.bot
 
         bot.get('https://twitter.com/search?q=%23'+hashtag+'&src=typed_query&f=live')
@@ -34,8 +54,8 @@ class Twitterbot:
 
         links = set() #using set so that only unique links are present and to avoid unnecessary repeatation
 
-        # obtaining the links of the tweets to retweet
-        for i in range(300):
+        # obtaining the links of the tweets
+        for i in range(3):
             bot.execute_script('window.scrollTo(0,document.body.scrollHeight)') # using js to scroll the webpage
             time.sleep(4)
             [links.add(elem.get_attribute('href')) for elem in bot.find_elements_by_xpath("//a[@dir='auto']")]
@@ -46,9 +66,13 @@ class Twitterbot:
             time.sleep(4)
 
             try:
+                #retweet
                 bot.find_element_by_css_selector('.css-18t94o4[data-testid="retweet"]').click()
                 actions = ActionChains(bot)
                 actions.send_keys(Keys.RETURN).perform()
+
+                #like
+                bot.find_element_by_css_selector('.css-18t94o4[data-testid="like"]').click()
                 time.sleep(10)
             except Exception as e:
                 time.sleep(2)
