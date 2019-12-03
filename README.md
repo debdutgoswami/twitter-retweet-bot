@@ -3,17 +3,21 @@
 
 # Twitter Retweet Bot </br>
 
-I made a simple twitter bot which will retweet tweets with the specified hashtag. This was my first attempt of creating a twitter bot. It is obviously not perfect and there is room for lots of imprvements which I will do eventually with time.</br>
+I made a simple twitter bot which will retweet tweets with the specified hashtag. This was my first attempt of creating a twitter bot. It is obviously not perfect and there is room for lots of improvements which I will do eventually with time.</br>
 
 # Instruction
 
 ## Getting the right libraries
 
-To install the necessary libraries run ```pip install -r requirements.txt``` in the terminal.</br>
+To install the necessary libraries run `pip install -r requirements.txt` in the terminal.</br>
+
+## Setting up your credentials
+
+To ensure you can login with your Twitter account, edit the `credentials.txt` file and enter your `email` and `password` in the respective fields and kindly keep the formatting correct of the file to ensure a smooth login without errors.
 
 ## Running the Bot
 
-To run the bot first you need to run the ```main.py``` script along with the ```hashtag``` passed as argument. To do that type ```python3 main.py {hashtag}``` in terminal and in place of ```{hashtag}``` enter the desired hashtag. </br>
+To run the bot first you need to run the `main.py` script along with the `hashtag` passed as argument. To do that type `python3 main.py {hashtag}` in terminal and in place of `{hashtag}` enter the desired hashtag. </br>
 
 # Usefulness
 

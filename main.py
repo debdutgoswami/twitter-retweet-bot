@@ -4,6 +4,8 @@ import sys
 
 hashtag = sys.argv[1]
 
-bot = tb.Twitterbot(secrets.email, secrets.password)
+credintials = secrets.get_credentials()
+
+bot = tb.Twitterbot(credintials['email'], credintials['password'])
 bot.login()
 bot.like_retweet(hashtag)
