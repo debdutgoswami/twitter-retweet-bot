@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
-import time
+import time, os
 
 class Twitterbot:
 
@@ -20,7 +20,7 @@ class Twitterbot:
 
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        self.bot = webdriver.Chrome(options=chrome_options)
+        self.bot = webdriver.Chrome(executable_path=os.path.dirname(os.path.realpath(__file__))+'\chromedriver',options=chrome_options)
 
     def login(self):
 
