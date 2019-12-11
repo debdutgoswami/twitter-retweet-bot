@@ -19,8 +19,11 @@ class Twitterbot:
         self.password = password
 
         chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        self.bot = webdriver.Chrome(executable_path=os.path.dirname(os.path.realpath(__file__))+'\chromedriver',options=chrome_options)
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        self.bot = webdriver.Chrome(executable_path=os.path.dirname(os.path.realpath(__file__)) + r'/chromedriver',options=chrome_options)
 
     def login(self):
 
