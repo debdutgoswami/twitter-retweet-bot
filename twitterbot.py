@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 import time
 
 class Twitterbot:
@@ -17,7 +18,9 @@ class Twitterbot:
         self.email = email
         self.password = password
 
-        self.bot = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        self.bot = webdriver.Chrome(options=chrome_options)
 
     def login(self):
 
@@ -55,7 +58,7 @@ class Twitterbot:
         links = set() #using set so that only unique links are present and to avoid unnecessary repeatation
 
         # obtaining the links of the tweets
-        for i in range(3):
+        for _ in range(100):
             bot.execute_script('window.scrollTo(0,document.body.scrollHeight)') # using js to scroll the webpage
             time.sleep(4)
             [links.add(elem.get_attribute('href')) for elem in bot.find_elements_by_xpath("//a[@dir='auto']")]
@@ -74,7 +77,7 @@ class Twitterbot:
                 #like
                 bot.find_element_by_css_selector('.css-18t94o4[data-testid="like"]').click()
                 time.sleep(10)
-            except Exception as e:
+            except:
                 time.sleep(2)
 
         bot.get('https://twitter.com/')
